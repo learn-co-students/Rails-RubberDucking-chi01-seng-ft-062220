@@ -1,0 +1,18 @@
+<%= form_for @student do |f| %>
+    <% if @student.errors.any? %>
+        <div id="error_explanations">
+        <h2><%= pluralize(@student.errors.count, "error") %> need(s) to be corrected.</h2>
+            <% @student.errors.full_messages.each do |msg| %>
+                <%= msg %>
+            <% end %>
+        </div>
+    <% end %>
+
+    <br><%= f.label :name %>:
+    <%= f.text_field :name %><br>
+
+    <br><%= f.label :mod %>:
+    <%= f.number_field :mod %><br>
+
+    <br><%= f.submit %>
+<% end %><br>

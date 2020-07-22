@@ -1,0 +1,22 @@
+<%= form_for @duck do |f| %>
+    <% if @duck.errors.any? %>
+        <div id="error_explanations">
+        <h2><%= pluralize(@duck.errors.count, "error") %> need(s) to be corrected.</h2>
+            <% @duck.errors.full_messages.each do |msg| %>
+                <%= msg %>
+            <% end %>
+        </div>
+    <% end %>
+
+    <br><%= f.label :name %>:
+    <%= f.text_field :name %><br>
+
+    <br><%= f.label :description %>:
+    <%= f.text_field :description %><br>
+
+    <br><%= f.label :student_name %>:
+    <%= f.collection_select :student_id, Student.all, :id, :name %><br>
+
+
+    <br><%= f.submit %>
+<% end %><br>
