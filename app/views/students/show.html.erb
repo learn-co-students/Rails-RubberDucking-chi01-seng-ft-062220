@@ -1,0 +1,22 @@
+<h1>Student Info</h1>
+
+Name: <%= @student.name %><br>
+Mod: <%= @student.mod %><br>
+<hr>
+<h2> My Ducks</h2> 
+<table>
+    <tr> 
+        <th> Duck Name </th>
+        <th> Description </th>
+    </tr>
+    <% @student.ducks.each do |duck| %>
+        <tr>
+            <td><%= duck.name %></td>
+            <td><%= duck.description %></td>
+        </tr>
+    <% end %>
+</table><br>
+
+<%= button_to "Edit Student", edit_student_path(@student), method: :get %><br>
+<%= button_to "Home Page", students_path, method: :get %>
+

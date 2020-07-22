@@ -1,0 +1,8 @@
+<h1>Duck Information</h1>
+
+My Name: <%= @duck.name %><br>
+My Description: <%= @duck.description %><br>
+I belong to : <%= link_to @duck.student.name, student_path(@duck.student) %><br>
+
+<br><%= button_to "Edit Duck", edit_duck_path(@duck), method: :get %><br>
+<%= button_to "Home Page", ducks_path, method: :get %>
